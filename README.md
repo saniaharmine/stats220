@@ -29,8 +29,8 @@ The lie is... *drum roll please* 🥁
 
 ---
 
-A meme that captures how I currently feel about my university studies is 
+A meme that captures how I currently feel about my university studies is:
 
-![](https://media1.tenor.com/m/jAgn70Xu0TIAAAAd/exams-exam-memes.gif)
+![](https://media.tenor.com/owsPz6f26FcAAAAM/happy-cat-silly-cat.gif)
 
 [click here for a procastinators downfall](https://theuselessweb.com/)
