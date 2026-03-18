@@ -17,7 +17,7 @@ Let's get to know me outside of uni:
 
 1. I love anything food-related: cooking, baking, nutrition — mainly eating. I even cracked my head open and got a concussion running down a hallway to get ice cream 😅  
 2. Being outside and active keeps me sane, espically being a CS student. I love long walks, pilates, volleyball and the beach.
-3. I always understand statistics immideatly and never get confused. I would also *never* leave an assignment last minte then acidentendlly have my boyfriend delete it all 1 hour before its due HAHAHA i am not crying rn.
+3. I always understand statistics immideatly and never get confused. I would also *never* leave an assignment last minte then acidentendlly delete it all 1 hour before its due HAHAHA i am not crying rn.
 
 <details>
 <summary>Reveal the lie</summary>
