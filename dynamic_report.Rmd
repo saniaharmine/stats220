@@ -1,0 +1,141 @@
+---
+title: "What makes a good walk?"
+output: html_document
+---
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+```
+
+```{js}
+$(function() {
+  $(".level2").css('visibility', 'hidden');
+  $(".level2").first().css('visibility', 'visible');
+  $(".container-fluid").height($(".container-fluid").height() + 300);
+  $(window).on('scroll', function() {
+    $('h2').each(function() {
+      var h2Top = $(this).offset().top - $(window).scrollTop();
+      var windowHeight = $(window).height();
+      if (h2Top >= 0 && h2Top <= windowHeight / 2) {
+        $(this).parent('div').css('visibility', 'visible');
+      } else if (h2Top > windowHeight / 2) {
+        $(this).parent('div').css('visibility', 'hidden');
+      }
+    });
+  });
+})
+```
+
+```{css, echo=FALSE}
+.figcaption {display: none}
+
+body {
+  background-color: #F5F1E8;
+  color: #2D4A3E;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 17px;
+  line-height: 1.65;
+  max-width: 760px;
+  margin: 40px auto;
+  padding: 0 24px 60px 24px;
+}
+
+h1 {
+  font-size: 34px;
+  font-weight: 700;
+  color: #2D4A3E;
+  margin-top: 0.8em;
+  margin-bottom: 0.2em;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2D4A3E;
+  margin-top: 2.2em;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #8B5A3C;
+}
+
+h3 {
+  font-size: 19px;
+  font-weight: 600;
+  color: #8B5A3C;
+  margin-top: 1.6em;
+}
+
+p { margin-bottom: 1.1em; }
+
+h4.author, h4.date {
+  font-style: italic;
+  color: #8B5A3C;
+  font-weight: normal;
+  font-size: 15px;
+  margin-top: 0;
+  margin-bottom: 0.3em;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  margin: 1.8em auto;
+}
+
+code {
+  background-color: rgba(45, 74, 62, 0.08);
+  color: #2D4A3E;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: Menlo, Consolas, monospace;
+  font-size: 0.9em;
+}
+
+```
+As a university student living close to campus, I walk a lot. Every day, I cover the same route on the way to university, the gym, or back home. Sometimes, I romanticise my walk: clear skies, big-girl brain switched on, and positive affirmations playing in my ears. Other days, it’s 8am, cold and rainy, still dark outside, and I’m lugging the heaviest bag ever up a hill. But it’s the same route?? So what shifts my mood? What makes a good walk? Can I somehow manipulate my walks so that I enjoy them all?
+
+To find these answers, over twelve days in May 2026, I logged every walk: where I was going, the temperature, the weather, what I was listening to, and how much I enjoyed it on a scale from 1–10. With 23 walks recorded, four patterns emerged.
+
+## Not all walks are equal
+
+The simplest place to start is also the most revealing. When I split the 23 walks by direction, the three destinations were not equal. Walks home averaged 7.9 out of 10. Walks to the gym averaged 7.2. Walks to university averaged 6.0 — and crucially, the lowest two scores in the entire dataset (a 2 and a 3) were both university walks.
+
+![Bar chart showing mean enjoyment by direction. Home walks averaged 7.9 out of 10, gym walks 7.2, and university walks 6.0. Individual walk scores are overlaid as points, showing that university walks have the widest spread, ranging from 2 to 9.](plot1.png)
+What the points reveal — and the bars hide — is that *direction also predicts variability*. Walks home cluster tightly between 5 and 10, and gym walks stay within a narrow 6–8 range. University walks, however, spread all the way from 2 to 9. This suggests that walking to university affects not just how enjoyable a walk is on average, but also how variable that enjoyment can be.
+
+A likely explanation is that walks to university usually happen in the morning, meaning my mood is heavily influenced by whatever the day ahead holds. Some mornings I might be excited to meet up with a friend, while other days I’m overwhelmed by a daunting pile of work. In contrast, walks home are much more predictable — they usually mean dinner before the gym or finally getting to sleep afterwards. Walks to the gym are also tied to a single purpose, so enjoyment levels stay relatively consistent.
+
+## What I listen to predicts how I'll feel
+
+The strongest pattern in my data wasn’t weather or temperature — it was what I had in my ears.
+
+
+![Horizontal bar chart of mean enjoyment by listening category. Phone call walks averaged 9.2, walking and talking with a friend 8.7, music 7.4, and nothing 5.8. Sample sizes are shown alongside each bar.](plot2.png)
+
+The difference in enjoyment between “phone call” walks and “nothing” walks was 3.4 points, larger than the gap between any direction, weather condition, or even the warmest and coldest walks I recorded. Whether someone physically with me or a friend on the phone, walks with company were consistently at the top of my enjoyment scale. In contrast, walks with nothing in my ears accounted for almost all of my lowest-rated experiences.
+
+What I noticed was that when I did call a friend, the walk effectively turned into the conversation. The cold, the rain, or the uphill sections became background noise rather than the focus.
+
+
+## Warmer walks, colder mornings
+
+The third pattern is the one I'd assumed would dominate, and it does have a real effect — just not in the way I expected. Across all 23 walks, there's a clear positive correlation between temperature and enjoyment.
+
+![Scatter plot of temperature against enjoyment, with each point coloured by direction. Cold morning walks to university cluster in the lower-left of the plot, while warmer afternoon walks home cluster in the upper-right. Gym walks sit between the two on both axes.](plot3.png)
+
+Looking at where the colours cluster, the colder end of the temperature axis is mostly made up of university walks, since those trips typically happen in the morning between 8 and 11am. The warmer end is dominated by home walks, which tend to occur later in the afternoon or evening when Auckland has warmed up.
+
+This means temperature isn’t an independent variable — it’s closely linked to when I’m walking, and therefore where I’m walking to.
+
+Both factors still matter, but they interact. Even within home walks alone, warmer conditions were generally rated more highly. However, the clustering suggests that the temperature effect is partly reflecting time of day rather than temperature alone.
+
+## What I have learnt
+
+Overall, these patterns suggest that the walk itself isn’t really changing — it’s the context around it that is. The route is identical, but the experience isn’t.
+
+Walks home are consistently the most enjoyable, which likely reflects what they represent: the day winding down, no more obligations, and something comfortable waiting at the end. Gym walks sit in the middle, probably because they’re routine and fairly predictable in what comes next. University walks are the most variable by far — sometimes fine, sometimes great, and sometimes genuinely rough.
+
+So what seems to matter most isn’t the weather or the distance, but what the walk is leading into. The same path can feel completely different depending on whether you’re heading toward stress, routine, or relief. In that sense, a “good walk” isn’t really about the walk at all — it’s about the situation it’s attached to.
+
